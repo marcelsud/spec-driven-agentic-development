@@ -1,4 +1,4 @@
-# Kiro Spec Documentation Index
+# Agentic Development Workflow Documentation Index
 
 ## Quick Start
 Start here to understand the agentic development workflow:
@@ -64,7 +64,7 @@ kiro_spec/
 
 ## Workflow Summary
 
-The Kiro Spec workflow follows these phases:
+The Agentic Development Workflow follows these phases:
 0. **PRD (Optional)** - Define business context and strategic foundation
 1. **Requirements** - Define what needs to be built (using EARS format)
 2. **Design** - Define how it will be built  
