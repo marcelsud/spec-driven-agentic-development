@@ -1,79 +1,248 @@
-# Agentic Development Workflow using Specs
+# Spec-Driven Agentic Development
 
-This repository contains a structured set of Markdown documents designed to guide agentic AI development tools (like Google's Gemini, Anthropic's Claude, or others) in building software features in a controlled, iterative, and professional manner.
+A modern methodology for building software features through structured specifications, optimized for Claude Code's native capabilities and focused slash commands.
 
-The core idea is to formalize the development process into distinct phases, each with its own specification document. This allows for clear communication, explicit approval gates, and a high degree of control over the AI's work.
+## 🎯 What This Is
 
-## How to Use
+This framework transforms complex feature development into manageable, iterative phases with explicit approval gates and quality controls. Instead of feeding large documents to AI agents, it uses focused slash commands for reliable, efficient development workflows.
 
-### For Claude Code Users (Recommended)
+## ⚡ Quick Start
 
-The easiest way to use this framework is with Claude Code's custom slash command:
+### For Claude Code (Recommended)
 
-1. **Clone this repository** to your local machine
-2. **Copy the slash command** to your project:
+1. **Install the methodology** in your project:
    ```bash
-   cp .claude/commands/spec.md /path/to/your/project/.claude/commands/
-   ```
-3. **Use the `/spec` command** in Claude Code:
-   ```
-   /spec user authentication system
-   /spec shopping cart functionality
-   /spec API rate limiting
+   # Copy methodology and commands to your project
+   cp -r .claude templates /path/to/your/project/
    ```
 
-The `/spec` command will guide you through the structured workflow with approval gates between each phase.
+2. **Run the focused workflow**:
+   ```bash
+   # Phase 1: Create EARS requirements
+   /spec:init user-authentication-system
+   
+   # Phase 2: Generate technical design  
+   /spec:design
+   
+   # Phase 3: Create TDD implementation tasks
+   /spec:tasks
+   
+   # Phase 4: Implement with chosen approach
+   # (TDD, standard, collaborative, or self-implementation)
+   ```
+
+3. **Follow approval gates**:
+   - Review and approve requirements before design
+   - Review and approve design before tasks
+   - Review and approve tasks before implementation
 
 ### For Other AI Tools
 
-This workflow is designed to be tool-agnostic. The general process involves providing the AI agent with the content of these files as context for the tasks.
+Load `.claude/CLAUDE.md` as context and guide the AI through the structured phases manually.
 
-1.  **Provide Initial Context**: Start by giving the agent the content of `docs/workflow.md`. This file is the main entry point and describes the entire workflow. You can do this by copying and pasting the content into your prompt or by referencing the file if the tool supports it.
+## 🔧 Core Methodology
 
-2.  **Load Supporting Documents**: As you progress through the development phases, provide the content of the other relevant documents (`advanced/advanced_mode.md`, `methodology/tdd.md`, `methodology/best_practices.md`, etc.) to the agent. The `docs/workflow.md` file itself contains references to indicate when a particular document is relevant.
+### EARS Requirements Format
 
-3.  **Follow the Phases**: Interact with the agent by following the phases outlined in `docs/workflow.md`:
-    *   **Phase 0 (Optional): PRD**: Create a Product Requirements Document for business context
-    *   **Phase 1: Requirements**: Generate a `requirements.md` file using EARS format
-    *   **Phase 2: Tech Stack**: Select technology stack from 4 predefined options or specify custom stack
-    *   **Phase 3: Design**: Create a `design.md` file with technical specifications
-    *   **Phase 4: Tasks**: Break down into an actionable `tasks.md` file with TDD methodology
-    *   **Phase 5: Implementation**: Implement the feature following the structured tasks
+Structured requirement syntax for clarity and testability:
 
-4.  **Use as a Guide**: These documents are not just for the agent; they are for you. Use them to structure your requests and to ensure the agent is following a sound engineering process.
+```
+Ubiquitous:    "The system SHALL [requirement]"
+Event-Driven:  "WHEN [trigger] THEN the system SHALL [response]"
+State-Driven:  "WHILE [state] the system SHALL [requirement]"  
+Conditional:   "IF [condition] THEN the system SHALL [requirement]"
+Optional:      "WHERE [feature] the system SHALL [requirement]"
+```
 
-## File Structure
+**Example**: "WHEN a user enters incorrect credentials three times THEN the system SHALL lock the account for 15 minutes"
 
-### Core Documentation (`docs/`)
--   `docs/workflow.md`: The main document. It outlines the entire interactive workflow, including all phases and interaction patterns. **This is your starting point.**
--   `docs/structure.md`: Details the expected structure and content for the `requirements.md`, `design.md`, and `tasks.md` files that will be generated during the workflow.
+### Test-Driven Development (TDD)
 
-### Development Methodology (`methodology/`)
--   `methodology/tdd.md`: Describes the Test-Driven Development (TDD) process in detail, including the Red-Green-Refactor cycle and its benefits. Load this file when you want the agent to follow a strict TDD approach.
--   `methodology/ears.md`: Provides examples of the EARS (Easy Approach to Requirements Syntax) format for writing clear and unambiguous requirements.
--   `methodology/prd.md`: Guide for creating Product Requirements Documents to provide business context before technical requirements.
--   `methodology/best_practices.md`: A collection of general software development best practices to guide the agent.
+Every implementation follows Red-Green-Refactor:
 
-### Advanced Features (`advanced/`)
--   `advanced/advanced_mode.md`: An optional extension to the standard workflow. It provides prompts and capabilities for a more in-depth, enterprise-grade analysis at each phase (e.g., security threat modeling, scalability planning). Load this file to enable "Advanced Mode."
--   `advanced/steering.md`: (Optional) Can be used to provide high-level goals, constraints, or principles that should guide the agent throughout the entire process.
+1. **🔴 Red**: Write failing test for next functionality
+2. **🟢 Green**: Write minimal code to make test pass
+3. **🔄 Refactor**: Improve code while keeping tests green
 
-## The Workflow Explained
+### Quality Gates
 
-The process is divided into phases with explicit approval gates. The agent cannot proceed to the next phase without your approval.
+- ✅ Requirements must be testable and specific (no vague terms)
+- ✅ Design must address all requirements with technical solutions
+- ✅ Tasks must include comprehensive TDD steps and test scenarios
+- ✅ Implementation must follow structured task breakdown
 
-0.  **PRD Creation (Optional)**: The agent creates a Product Requirements Document with business context, market analysis, and strategic foundation.
-1.  **Requirements Creation**: The agent defines *what* needs to be built using EARS format.
-2.  **Tech Stack Selection**: The agent presents 4 predefined tech stack options (Full-Stack JavaScript, Python + Modern Frontend, Cloud-Native Microservices, Enterprise Java/C#) plus a custom option, then asks up to 3 follow-up questions about frameworks, databases, and deployment preferences.
-3.  **Design Creation**: The agent defines *how* it will be built with technical specifications based on the selected tech stack.
-4.  **Tasks Creation**: The agent breaks down the "how" into small, implementable steps using TDD methodology.
-5.  **Implementation**: The agent writes the code, following the structured tasks and TDD approach.
+## 📁 Project Structure
 
-This structured approach ensures that you and the AI are aligned at every step, minimizing wasted effort and producing a higher-quality result.
+```
+your-project/
+├── .claude/
+│   ├── CLAUDE.md                # Complete methodology reference
+│   └── commands/
+│       ├── spec-init.md        # /spec:init - Initialize requirements  
+│       ├── spec-design.md      # /spec:design - Generate design
+│       ├── spec-tasks.md       # /spec:tasks - Create TDD tasks
+│       └── spec.md             # /spec - Legacy full workflow
+├── templates/                   # Reference templates for the agent
+│   ├── requirements.md         # EARS requirements template
+│   ├── design.md              # Technical design template
+│   └── tasks.md               # TDD task breakdown template
+└── features/                   # Your generated specifications
+    └── [feature-name]/
+        ├── requirements.md     # EARS-formatted requirements
+        ├── design.md          # Technical design document
+        └── tasks.md           # Implementation task breakdown
+```
 
-## Templates and Examples
+## 🚀 Workflow Commands
 
-The framework includes:
-- **Templates**: Ready-to-use templates for PRD, requirements, design, and tasks
-- **Examples**: A complete sample project showing the workflow in action
-- **Slash Command**: Pre-configured Claude Code command for easy access
+| Phase | Command | Input | Output | Purpose |
+|-------|---------|-------|--------|---------|
+| 1️⃣ | `/spec:init feature-name` | Feature description | `requirements.md` | EARS requirements |
+| 2️⃣ | `/spec:design` | Existing requirements | `design.md` | Technical architecture |
+| 3️⃣ | `/spec:tasks` | Existing design | `tasks.md` | TDD implementation plan |
+| 4️⃣ | Implementation | Task breakdown | Working code | Choose your approach |
+
+### Phase Details
+
+#### 1️⃣ Requirements (`/spec:init`)
+- Creates comprehensive EARS-formatted requirements
+- Covers functional, non-functional, and edge case scenarios
+- Includes specific validation rules and error handling
+- **Approval Gate**: "Requirements complete. Ready for design phase?"
+
+#### 2️⃣ Design (`/spec:design`)  
+- Presents 4 tech stack options + custom choice
+- Creates detailed technical architecture
+- Addresses security, performance, and scalability
+- Maps all requirements to technical solutions
+- **Approval Gate**: "Design complete. Ready for task breakdown?"
+
+#### 3️⃣ Tasks (`/spec:tasks`)
+- Breaks design into 8-15 implementable tasks
+- Each task includes Red-Green-Refactor TDD steps
+- Comprehensive test scenarios and dependencies
+- Clear acceptance criteria and quality gates
+- **Approval Gate**: "Tasks ready. Ready to begin implementation?"
+
+#### 4️⃣ Implementation
+Choose your approach:
+- **🔴🟢🔄 TDD**: Strict Red-Green-Refactor methodology
+- **⚡ Standard**: Traditional implementation following tasks
+- **🤝 Collaborative**: Mixed human-AI development
+- **👤 Self**: Use spec as implementation guide
+
+## 📖 Example: Task Management API
+
+The complete example in `features/task-management-api/` demonstrates:
+
+### Requirements (50+ EARS-formatted)
+```markdown
+- WHEN a user submits a POST request to `/api/tasks` with valid data 
+  THEN the system SHALL create a new task and return HTTP 201
+
+- IF task title exceeds 200 characters 
+  THEN the system SHALL return HTTP 400 with validation error
+
+- The system SHALL respond to API requests within 200 milliseconds
+```
+
+### Design (Full Technical Architecture)
+- **Tech Stack**: Node.js + Express.js + PostgreSQL
+- **Architecture**: RESTful API with layered architecture
+- **Security**: Input validation, rate limiting, audit logging
+- **Performance**: Connection pooling, indexing, caching strategy
+
+### Tasks (12 TDD Implementation Tasks)
+```markdown
+Task 1: Project Infrastructure Setup
+- Red: Write test for package.json validation
+- Green: Initialize npm project with dependencies
+- Refactor: Organize structure and optimize config
+
+Task 2: Database Setup and Configuration
+- Red: Write failing tests for database connection
+- Green: Implement basic database configuration
+- Refactor: Add connection pooling and error handling
+```
+
+## 🔄 Migration Guide
+
+### From Legacy Spec-Driven Development
+
+**Old Approach** (Document-heavy):
+```bash
+# Required multiple large document references
+/spec "Build user auth system" 
+# → Single command with all methodology loaded
+```
+
+**New Approach** (Command-focused):
+```bash
+# Focused, reliable commands
+/spec:init user-authentication-system  # Just requirements
+/spec:design                           # Just design  
+/spec:tasks                           # Just tasks
+```
+
+### Migration Steps
+1. **Copy new structure**: `cp -r .claude/ templates/ /your/project/`
+2. **Use focused commands**: Replace monolithic `/spec` with phase-specific commands
+3. **Reference .claude/CLAUDE.md**: Single source of truth for methodology
+4. **Clean slate**: All methodology consolidated into `.claude/CLAUDE.md`
+
+## 🎯 Why This Approach Works
+
+### Problems with Traditional AI Development
+- ❌ **Context Overload**: Large documents overwhelm AI context windows
+- ❌ **Reliability Issues**: Complex workflows fail unpredictably  
+- ❌ **Poor Iteration**: Hard to modify individual phases
+- ❌ **Vague Requirements**: Natural language lacks precision
+
+### Solutions with Spec-Driven Development
+- ✅ **Focused Commands**: Each command has single, clear purpose
+- ✅ **Reliable Results**: Smaller operations with higher success rates
+- ✅ **Easy Iteration**: Modify requirements/design/tasks independently
+- ✅ **EARS Precision**: Structured requirements eliminate ambiguity
+- ✅ **TDD Quality**: Built-in testing ensures robust implementation
+- ✅ **Approval Gates**: Human oversight at every decision point
+
+## 🛠️ Advanced Features
+
+### Tech Stack Options
+The methodology includes 4 predefined tech stacks plus custom options:
+
+1. **Full-Stack JavaScript** (Node.js + React/Vue + Database)
+2. **Python + Modern Frontend** (FastAPI/Django + React/Vue)  
+3. **Cloud-Native Microservices** (Kubernetes + API Gateway)
+4. **Enterprise Java/C#** (Spring Boot/.NET + Enterprise patterns)
+5. **Custom/Other** (User-defined stack)
+
+### Quality Assurance
+- **Validation**: Every requirement must be testable
+- **Traceability**: Design elements map to specific requirements
+- **Test Coverage**: Comprehensive test scenarios for all functionality
+- **Performance**: Specific timing and scalability requirements
+- **Security**: Built-in security considerations and threat modeling
+
+### Extensibility
+- **Custom Templates**: Modify `.claude/templates/` for your standards
+- **Organization Standards**: Integrate with existing development practices
+- **Tool Integration**: Works with any development environment
+- **Language Agnostic**: Methodology applies to any programming language
+
+## 📚 Additional Resources
+
+- **Complete Methodology**: See `.claude/CLAUDE.md` for detailed guidance
+- **Templates**: Use `.claude/templates/` as starting points
+- **Example Project**: Study `features/task-management-api/` for reference
+- **Command Reference**: Each `.claude/commands/*.md` contains usage instructions
+
+## 🤝 Contributing
+
+This methodology evolved from practical experience with AI-assisted development. Improvements and refinements are welcome through issues and pull requests.
+
+---
+
+**Ready to build better software with structured specifications?**
+
+Start with: `/spec:init your-first-feature` 🚀
