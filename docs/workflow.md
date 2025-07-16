@@ -9,16 +9,28 @@ Specs allow incremental development of complex features, with control and feedba
 Spec files allow for the inclusion of references to additional files via "#[[file:<relative_file_name>]]". This means that documents like an openapi spec or graphql spec can be used to influence implementation in a low-friction way.
 
 ## Workflow Process
-1. Start with requirements.md - define what needs to be built
-2. Create design.md - define how it will be built
-3. Break down into tasks.md - define the implementation steps
-4. Iterate and refine each document as needed
-5. Use the spec to guide incremental development with control and feedback
+1. (Optional) Start with PRD - define business context and strategic foundation
+2. Create requirements.md - define what needs to be built (using EARS format)
+3. Create design.md - define how it will be built
+4. Break down into tasks.md - define the implementation steps
+5. Iterate and refine each document as needed
+6. Use the spec to guide incremental development with control and feedback
 
 ## Interactive Workflow Flow
 
+### Phase 0: Product Requirements Document (PRD) Creation (Optional Advanced)
+1. **Agent offers PRD creation**: "Would you like to create a comprehensive Product Requirements Document (PRD) before proceeding with EARS requirements? A PRD provides business context, market analysis, and strategic foundation."
+2. **User chooses approach**:
+   - "PRD" → Agent creates comprehensive PRD with business analysis
+   - "requirements" → Skip directly to EARS requirements
+   - "advanced PRD" → Agent creates enhanced PRD with deeper analysis
+3. **If PRD is created**:
+   - Agent generates PRD with business context, user personas, market analysis
+   - Agent asks for approval: "The PRD is complete with business context and strategic foundation. Ready to proceed to EARS requirements?"
+   - User reviews and approves or requests changes
+
 ### Phase 1: Requirements Creation
-1. **Agent creates requirements.md** based on user's initial feature description
+1. **Agent creates requirements.md** based on user's initial feature description (or approved PRD)
 2. **Agent asks for user approval**: "Do the requirements look good? If so, we can move on to the design."
 3. **User reviews and responds**:
    - If approved: Move to Phase 2
@@ -100,3 +112,4 @@ Spec files allow for the inclusion of references to additional files via "#[[fil
 - ../methodology/ears.md
 - ../methodology/best_practices.md
 - structure.md
+- ../templates/prd_template.md

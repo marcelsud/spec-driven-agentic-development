@@ -9,6 +9,33 @@ Users can access advanced mode at any approval gate by:
 
 ---
 
+## Phase 0: Product Requirements Document (PRD) Creation (Advanced)
+
+### Agent Prompt
+"Would you like to create a comprehensive Product Requirements Document (PRD) before proceeding with EARS requirements? A PRD provides business context, market analysis, and strategic foundation. Type 'PRD' to generate one, or 'requirements' to proceed directly to EARS requirements."
+
+### Capabilities
+- **Business Context Analysis**: Market opportunity, competitive landscape, and business case development.
+- **User Research Integration**: Persona development, user journey mapping, and experience design.
+- **Strategic Planning**: Feature prioritization, phased implementation strategy, and success metrics.
+- **Stakeholder Alignment**: Executive summary, resource requirements, and ROI projections.
+- **Risk Assessment**: Technical, business, and market risk identification and mitigation.
+
+### User Responses
+- "PRD" → Generate comprehensive Product Requirements Document
+- "requirements" → Skip PRD and proceed directly to EARS requirements
+- "advanced PRD" → Generate PRD with enhanced business analysis and strategic planning
+
+### PRD to EARS Transition
+Once PRD is approved, the agent will:
+1. Extract user stories from personas and user journey
+2. Convert feature specifications to EARS format
+3. Use success metrics to define acceptance criteria
+4. Reference technical considerations in requirements
+5. Ensure all PRD elements are reflected in structured requirements
+
+---
+
 ## Phase 1: Requirements Creation (Advanced)
 
 ### Agent Prompt
@@ -20,6 +47,7 @@ Users can access advanced mode at any approval gate by:
 - **Edge Case Analysis**: Systematic identification of boundary conditions and error scenarios.
 - **Stakeholder Impact Analysis**: Assessment of how requirements affect different user roles.
 - **Compliance Mapping**: Alignment with regulatory or industry standards.
+- **PRD Alignment Check**: Ensure requirements align with PRD objectives (if PRD was created).
 
 ---
 

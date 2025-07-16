@@ -10,6 +10,7 @@ Start here to understand the agentic development workflow:
 Learn about the development approaches and best practices:
 - [tdd.md](../methodology/tdd.md) - Test-Driven Development process
 - [ears.md](../methodology/ears.md) - Requirements syntax (EARS format)
+- [prd.md](../methodology/prd.md) - Product Requirements Document guide
 - [best_practices.md](../methodology/best_practices.md) - General development best practices
 
 ## Advanced Features
@@ -19,12 +20,8 @@ Enhance your workflow with advanced capabilities:
 
 ## Templates and Examples
 Resources for implementing the workflow:
-- [templates/](../templates/) - Template files for specs
+- [templates/](../templates/) - Template files for specs (requirements, design, tasks, PRD)
 - [examples/](../examples/) - Example implementations
-
-## Tools and Utilities
-Supporting tools for the workflow:
-- [tools/](../tools/) - Validation and utility scripts
 
 ## Navigation Guide
 
@@ -42,7 +39,7 @@ Supporting tools for the workflow:
 ### For Developers
 - Review [best_practices.md](../methodology/best_practices.md) for coding standards
 - Study [tdd.md](../methodology/tdd.md) for testing methodology
-- Explore [tools/](../tools/) for development utilities
+- Use [templates/](../templates/) for structured development
 
 ## File Organization
 
@@ -56,19 +53,20 @@ kiro_spec/
 ├── methodology/                # Development approaches
 │   ├── tdd.md                 # Test-driven development
 │   ├── ears.md                # Requirements syntax
+│   ├── prd.md                 # Product requirements
 │   └── best_practices.md      # Best practices
 ├── advanced/                   # Advanced features
 │   ├── advanced_mode.md       # Advanced capabilities
 │   └── steering.md            # Project steering
 ├── templates/                  # Template files
-├── examples/                   # Example implementations
-└── tools/                      # Supporting tools
+└── examples/                   # Example implementations
 ```
 
 ## Workflow Summary
 
 The Kiro Spec workflow follows these phases:
-1. **Requirements** - Define what needs to be built
+0. **PRD (Optional)** - Define business context and strategic foundation
+1. **Requirements** - Define what needs to be built (using EARS format)
 2. **Design** - Define how it will be built  
 3. **Tasks** - Break down into implementation steps
 4. **Implementation** - Execute using TDD or other methodology
