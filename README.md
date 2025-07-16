@@ -35,9 +35,10 @@ This workflow is designed to be tool-agnostic. The general process involves prov
 3.  **Follow the Phases**: Interact with the agent by following the phases outlined in `docs/workflow.md`:
     *   **Phase 0 (Optional): PRD**: Create a Product Requirements Document for business context
     *   **Phase 1: Requirements**: Generate a `requirements.md` file using EARS format
-    *   **Phase 2: Design**: Create a `design.md` file with technical specifications
-    *   **Phase 3: Tasks**: Break down into an actionable `tasks.md` file with TDD methodology
-    *   **Phase 4: Implementation**: Implement the feature following the structured tasks
+    *   **Phase 2: Tech Stack**: Select technology stack from 4 predefined options or specify custom stack
+    *   **Phase 3: Design**: Create a `design.md` file with technical specifications
+    *   **Phase 4: Tasks**: Break down into an actionable `tasks.md` file with TDD methodology
+    *   **Phase 5: Implementation**: Implement the feature following the structured tasks
 
 4.  **Use as a Guide**: These documents are not just for the agent; they are for you. Use them to structure your requests and to ensure the agent is following a sound engineering process.
 
@@ -63,9 +64,10 @@ The process is divided into phases with explicit approval gates. The agent canno
 
 0.  **PRD Creation (Optional)**: The agent creates a Product Requirements Document with business context, market analysis, and strategic foundation.
 1.  **Requirements Creation**: The agent defines *what* needs to be built using EARS format.
-2.  **Design Creation**: The agent defines *how* it will be built with technical specifications.
-3.  **Tasks Creation**: The agent breaks down the "how" into small, implementable steps using TDD methodology.
-4.  **Implementation**: The agent writes the code, following the structured tasks and TDD approach.
+2.  **Tech Stack Selection**: The agent presents 4 predefined tech stack options (Full-Stack JavaScript, Python + Modern Frontend, Cloud-Native Microservices, Enterprise Java/C#) plus a custom option, then asks up to 3 follow-up questions about frameworks, databases, and deployment preferences.
+3.  **Design Creation**: The agent defines *how* it will be built with technical specifications based on the selected tech stack.
+4.  **Tasks Creation**: The agent breaks down the "how" into small, implementable steps using TDD methodology.
+5.  **Implementation**: The agent writes the code, following the structured tasks and TDD approach.
 
 This structured approach ensures that you and the AI are aligned at every step, minimizing wasted effort and producing a higher-quality result.
 
