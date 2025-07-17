@@ -193,15 +193,6 @@ Choose your approach:
 
 ## 🛠️ Advanced Features
 
-### Tech Stack Options
-The methodology includes 4 predefined tech stacks plus custom options:
-
-1. **Full-Stack JavaScript** (Node.js + React/Vue + Database)
-2. **Python + Modern Frontend** (FastAPI/Django + React/Vue)  
-3. **Cloud-Native Microservices** (Kubernetes + API Gateway)
-4. **Enterprise Java/C#** (Spring Boot/.NET + Enterprise patterns)
-5. **Custom/Other** (User-defined stack)
-
 ### Quality Assurance
 - **Validation**: Every requirement must be testable
 - **Traceability**: Design elements map to specific requirements
@@ -219,7 +210,6 @@ The methodology includes 4 predefined tech stacks plus custom options:
 
 - **Complete Methodology**: See `.claude/CLAUDE.md` for detailed guidance
 - **Templates**: Use `.claude/templates/` as starting points
-- **Example Project**: Study `features/task-management-api/` for reference
 - **Command Reference**: Each `.claude/commands/*.md` contains usage instructions
 
 ## 🤝 Contributing

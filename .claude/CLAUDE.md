@@ -14,15 +14,15 @@ This methodology provides a structured, iterative approach to software developme
 Use focused slash commands for reliable, efficient development:
 
 1. **Requirements Phase**: 
-   - Run `/spec:init [feature-name]` to create EARS-formatted requirements
+   - Run `/spec-init [feature-name]` to create EARS-formatted requirements
    - This creates the feature directory and requirements.md
 
 2. **Design Phase**:
-   - After requirements approval, run `/spec:design` to generate technical design
+   - After requirements approval, run `/spec-design` to generate technical design
    - This creates design.md with architecture and implementation approach
 
 3. **Tasks Phase**:
-   - After design approval, run `/spec:tasks` to break down into TDD tasks
+   - After design approval, run `/spec-tasks` to break down into TDD tasks
    - This creates tasks.md with structured implementation plan
 
 4. **Implementation Phase**:
@@ -148,9 +148,9 @@ project/
 ## Usage with Claude Code
 
 ### Slash Commands
-- `/spec:init [feature-name]` - Initialize new feature specification
-- `/spec:design` - Generate design from existing requirements  
-- `/spec:tasks` - Create implementation tasks from design
+- `/spec-init [feature-name]` - Initialize new feature specification
+- `/spec-design` - Generate design from existing requirements  
+- `/spec-tasks` - Create implementation tasks from design
 
 ### Best Practices
 - Always use explicit approval gates between phases

@@ -49,11 +49,11 @@ Ensure requirements are:
 
 ## Approval Gate
 After creating requirements.md, ask:
-"Requirements specification complete for [$ARGUMENTS]. The EARS-formatted requirements cover [brief summary of key areas]. Ready to proceed to design phase with `/spec:design`, or would you like to review and modify the requirements first?"
+"Requirements specification complete for [$ARGUMENTS]. The EARS-formatted requirements cover [brief summary of key areas]. Ready to proceed to design phase with `/spec-design`, or would you like to review and modify the requirements first?"
 
 ## Next Steps
 - User reviews requirements and approves/requests changes
-- Once approved, user can run `/spec:design` to proceed to technical design phase
+- Once approved, user can run `/spec-design` to proceed to technical design phase
 - Implementation follows structured phases with approval gates
 
 Now initialize the feature specification for: **$ARGUMENTS**

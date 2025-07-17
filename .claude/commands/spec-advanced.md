@@ -172,10 +172,10 @@ Add advanced implementation tasks for:
 
 ### Activate Advanced Mode
 Users can request advanced analysis at any phase:
-- During `/spec:init`: "Add advanced security analysis"
-- During `/spec:design`: "Include threat modeling and scalability analysis"
-- During `/spec:tasks`: "Add advanced testing and monitoring tasks"
-- Standalone: `/spec:advanced` for comprehensive analysis of existing specs
+- During `/spec-init`: "Add advanced security analysis"
+- During `/spec-design`: "Include threat modeling and scalability analysis"
+- During `/spec-tasks`: "Add advanced testing and monitoring tasks"
+- Standalone: `/spec-advanced` for comprehensive analysis of existing specs
 
 ### Advanced Mode Outputs
 - **Enhanced Requirements**: Additional EARS requirements for security, performance, and edge cases
