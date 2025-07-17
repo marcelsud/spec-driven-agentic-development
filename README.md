@@ -19,13 +19,13 @@ This framework transforms complex feature development into manageable, iterative
 2. **Run the focused workflow**:
    ```bash
    # Phase 1: Create EARS requirements
-   /spec:init user-authentication-system
+   /spec-init user-authentication-system
    
    # Phase 2: Generate technical design  
-   /spec:design
+   /spec-design
    
    # Phase 3: Create TDD implementation tasks
-   /spec:tasks
+   /spec-tasks
    
    # Phase 4: Implement with chosen approach
    # (TDD, standard, collaborative, or self-implementation)
@@ -78,11 +78,11 @@ your-project/
 ├── .claude/
 │   ├── CLAUDE.md                # Complete methodology reference
 │   └── commands/
-│       ├── spec-init.md        # /spec:init - Initialize requirements  
-│       ├── spec-design.md      # /spec:design - Generate design
-│       ├── spec-tasks.md       # /spec:tasks - Create TDD tasks
-│       ├── spec-advanced.md    # /spec:advanced - Enterprise analysis
-│       └── spec-help.md        # /spec:help - Command reference
+│       ├── spec-init.md        # /spec-init - Initialize requirements  
+│       ├── spec-design.md      # /spec-design - Generate design
+│       ├── spec-tasks.md       # /spec-tasks - Create TDD tasks
+│       ├── spec-advanced.md    # /spec-advanced - Enterprise analysis
+│       └── spec-help.md        # /spec-help - Command reference
 ├── templates/                   # Reference templates for the agent
 │   ├── requirements.md         # EARS requirements template
 │   ├── design.md              # Technical design template
@@ -98,29 +98,29 @@ your-project/
 
 | Phase | Command | Input | Output | Purpose |
 |-------|---------|-------|--------|---------|
-| 1️⃣ | `/spec:init feature-name` | Feature description | `requirements.md` | EARS requirements |
-| 2️⃣ | `/spec:design` | Existing requirements | `design.md` | Technical architecture |
-| 3️⃣ | `/spec:tasks` | Existing design | `tasks.md` | TDD implementation plan |
+| 1️⃣ | `/spec-init feature-name` | Feature description | `requirements.md` | EARS requirements |
+| 2️⃣ | `/spec-design` | Existing requirements | `design.md` | Technical architecture |
+| 3️⃣ | `/spec-tasks` | Existing design | `tasks.md` | TDD implementation plan |
 | 4️⃣ | Implementation | Task breakdown | Working code | Choose your approach |
-| ⚡ | `/spec:advanced` | Existing specifications | Enhanced specs | Security & risk analysis |
-| ❓ | `/spec:help` | None | Command reference | Quick help guide |
+| ⚡ | `/spec-advanced` | Existing specifications | Enhanced specs | Security & risk analysis |
+| ❓ | `/spec-help` | None | Command reference | Quick help guide |
 
 ### Phase Details
 
-#### 1️⃣ Requirements (`/spec:init`)
+#### 1️⃣ Requirements (`/spec-init`)
 - Creates comprehensive EARS-formatted requirements
 - Covers functional, non-functional, and edge case scenarios
 - Includes specific validation rules and error handling
 - **Approval Gate**: "Requirements complete. Ready for design phase?"
 
-#### 2️⃣ Design (`/spec:design`)  
+#### 2️⃣ Design (`/spec-design`)  
 - Presents 4 tech stack options + custom choice
 - Creates detailed technical architecture
 - Addresses security, performance, and scalability
 - Maps all requirements to technical solutions
 - **Approval Gate**: "Design complete. Ready for task breakdown?"
 
-#### 3️⃣ Tasks (`/spec:tasks`)
+#### 3️⃣ Tasks (`/spec-tasks`)
 - Breaks design into 8-15 implementable tasks
 - Each task includes Red-Green-Refactor TDD steps
 - Comprehensive test scenarios and dependencies
@@ -134,7 +134,7 @@ Choose your approach:
 - **🤝 Collaborative**: Mixed human-AI development
 - **👤 Self**: Use spec as implementation guide
 
-#### ⚡ Advanced Analysis (`/spec:advanced`)
+#### ⚡ Advanced Analysis (`/spec-advanced`)
 - Applies enterprise-grade analysis to existing specifications
 - Includes STRIDE threat modeling for security vulnerabilities
 - Provides comprehensive risk assessment with mitigation strategies
@@ -142,7 +142,7 @@ Choose your approach:
 - Covers edge cases and failure scenarios
 - **Usage**: Can be run at any phase for enhanced analysis
 
-#### ❓ Help (`/spec:help`)
+#### ❓ Help (`/spec-help`)
 - Displays comprehensive command reference and usage guide
 - Shows EARS format examples and TDD methodology
 - Provides file structure and workflow overview
@@ -203,4 +203,4 @@ This methodology evolved from practical experience with AI-assisted development.
 
 **Ready to build better software with structured specifications?**
 
-Start with: `/spec:init your-first-feature` 🚀
+Start with: `/spec-init your-first-feature` 🚀
