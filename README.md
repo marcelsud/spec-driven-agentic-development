@@ -80,8 +80,7 @@ your-project/
 │   └── commands/
 │       ├── spec-init.md        # /spec:init - Initialize requirements  
 │       ├── spec-design.md      # /spec:design - Generate design
-│       ├── spec-tasks.md       # /spec:tasks - Create TDD tasks
-│       └── spec.md             # /spec - Legacy full workflow
+│       └── spec-tasks.md       # /spec:tasks - Create TDD tasks
 ├── templates/                   # Reference templates for the agent
 │   ├── requirements.md         # EARS requirements template
 │   ├── design.md              # Technical design template
@@ -130,65 +129,6 @@ Choose your approach:
 - **⚡ Standard**: Traditional implementation following tasks
 - **🤝 Collaborative**: Mixed human-AI development
 - **👤 Self**: Use spec as implementation guide
-
-## 📖 Example: Task Management API
-
-The complete example in `features/task-management-api/` demonstrates:
-
-### Requirements (50+ EARS-formatted)
-```markdown
-- WHEN a user submits a POST request to `/api/tasks` with valid data 
-  THEN the system SHALL create a new task and return HTTP 201
-
-- IF task title exceeds 200 characters 
-  THEN the system SHALL return HTTP 400 with validation error
-
-- The system SHALL respond to API requests within 200 milliseconds
-```
-
-### Design (Full Technical Architecture)
-- **Tech Stack**: Node.js + Express.js + PostgreSQL
-- **Architecture**: RESTful API with layered architecture
-- **Security**: Input validation, rate limiting, audit logging
-- **Performance**: Connection pooling, indexing, caching strategy
-
-### Tasks (12 TDD Implementation Tasks)
-```markdown
-Task 1: Project Infrastructure Setup
-- Red: Write test for package.json validation
-- Green: Initialize npm project with dependencies
-- Refactor: Organize structure and optimize config
-
-Task 2: Database Setup and Configuration
-- Red: Write failing tests for database connection
-- Green: Implement basic database configuration
-- Refactor: Add connection pooling and error handling
-```
-
-## 🔄 Migration Guide
-
-### From Legacy Spec-Driven Development
-
-**Old Approach** (Document-heavy):
-```bash
-# Required multiple large document references
-/spec "Build user auth system" 
-# → Single command with all methodology loaded
-```
-
-**New Approach** (Command-focused):
-```bash
-# Focused, reliable commands
-/spec:init user-authentication-system  # Just requirements
-/spec:design                           # Just design  
-/spec:tasks                           # Just tasks
-```
-
-### Migration Steps
-1. **Copy new structure**: `cp -r .claude/ templates/ /your/project/`
-2. **Use focused commands**: Replace monolithic `/spec` with phase-specific commands
-3. **Reference .claude/CLAUDE.md**: Single source of truth for methodology
-4. **Clean slate**: All methodology consolidated into `.claude/CLAUDE.md`
 
 ## 🎯 Why This Approach Works
 
