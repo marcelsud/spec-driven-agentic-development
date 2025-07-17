@@ -18,7 +18,7 @@ git clone https://github.com/marcelsud/spec-driven-agentic-development
 cd spec-driven-agentic-development
 
 # Copy to global Claude directory
-cp -r .claude templates "$HOME/.claude/"
+cp -r .claude "$HOME/"
 ```
 
 Now use from any project directory:
@@ -38,7 +38,7 @@ git clone https://github.com/marcelsud/spec-driven-agentic-development
 cd spec-driven-agentic-development
 
 # Copy methodology and commands to your project
-cp -r .claude templates /path/to/your/project/
+cp -r .claude /path/to/your/project/
 ```
 
 ### Usage Workflow
@@ -110,10 +110,10 @@ your-project/
 │       ├── spec-tasks.md       # /spec-tasks - Create TDD tasks
 │       ├── spec-advanced.md    # /spec-advanced - Enterprise analysis
 │       └── spec-help.md        # /spec-help - Command reference
-├── templates/                   # Reference templates for the agent
-│   ├── requirements.md         # EARS requirements template
-│   ├── design.md              # Technical design template
-│   └── tasks.md               # TDD task breakdown template
+│   └── templates/               # Reference templates for the agent
+│       ├── requirements.md     # EARS requirements template
+│       ├── design.md           # Technical design template
+│       └── tasks.md            # TDD task breakdown template
 └── features/                   # Your generated specifications
     └── [feature-name]/
         ├── requirements.md     # EARS-formatted requirements

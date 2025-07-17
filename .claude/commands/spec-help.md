@@ -85,9 +85,9 @@ features/[feature-name]/
 ## Templates
 
 Reference templates are available in:
-- `templates/requirements.md` - EARS requirements template
-- `templates/design.md` - Technical design template  
-- `templates/tasks.md` - TDD task breakdown template
+- `.claude/templates/requirements.md` - EARS requirements template
+- `.claude/templates/design.md` - Technical design template  
+- `.claude/templates/tasks.md` - TDD task breakdown template
 
 ## Implementation Approaches
 
@@ -167,7 +167,7 @@ Choose your implementation strategy:
 ## Need More Help?
 
 - **Complete Methodology**: See `.claude/CLAUDE.md` for detailed guidance
-- **Templates**: Use `templates/` directory for reference formats
+- **Templates**: Use `.claude/templates/` directory for reference formats
 - **Command Details**: Each command file in `.claude/commands/` contains specific instructions
 
 ---
