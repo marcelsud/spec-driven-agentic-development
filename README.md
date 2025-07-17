@@ -80,7 +80,9 @@ your-project/
 │   └── commands/
 │       ├── spec-init.md        # /spec:init - Initialize requirements  
 │       ├── spec-design.md      # /spec:design - Generate design
-│       └── spec-tasks.md       # /spec:tasks - Create TDD tasks
+│       ├── spec-tasks.md       # /spec:tasks - Create TDD tasks
+│       ├── spec-advanced.md    # /spec:advanced - Enterprise analysis
+│       └── spec-help.md        # /spec:help - Command reference
 ├── templates/                   # Reference templates for the agent
 │   ├── requirements.md         # EARS requirements template
 │   ├── design.md              # Technical design template
@@ -100,6 +102,8 @@ your-project/
 | 2️⃣ | `/spec:design` | Existing requirements | `design.md` | Technical architecture |
 | 3️⃣ | `/spec:tasks` | Existing design | `tasks.md` | TDD implementation plan |
 | 4️⃣ | Implementation | Task breakdown | Working code | Choose your approach |
+| ⚡ | `/spec:advanced` | Existing specifications | Enhanced specs | Security & risk analysis |
+| ❓ | `/spec:help` | None | Command reference | Quick help guide |
 
 ### Phase Details
 
@@ -129,6 +133,20 @@ Choose your approach:
 - **⚡ Standard**: Traditional implementation following tasks
 - **🤝 Collaborative**: Mixed human-AI development
 - **👤 Self**: Use spec as implementation guide
+
+#### ⚡ Advanced Analysis (`/spec:advanced`)
+- Applies enterprise-grade analysis to existing specifications
+- Includes STRIDE threat modeling for security vulnerabilities
+- Provides comprehensive risk assessment with mitigation strategies
+- Identifies performance bottlenecks and scalability requirements
+- Covers edge cases and failure scenarios
+- **Usage**: Can be run at any phase for enhanced analysis
+
+#### ❓ Help (`/spec:help`)
+- Displays comprehensive command reference and usage guide
+- Shows EARS format examples and TDD methodology
+- Provides file structure and workflow overview
+- **Usage**: Run anytime you need quick reference information
 
 ## 🎯 Why This Approach Works
 
