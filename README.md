@@ -8,15 +8,42 @@ This framework transforms complex feature development into manageable, iterative
 
 ## ⚡ Quick Start
 
-### For Claude Code (Recommended)
+### Global Installation (Recommended)
 
-1. **Install the methodology** in your project:
-   ```bash
-   # Copy methodology and commands to your project
-   cp -r .claude templates /path/to/your/project/
-   ```
+Install once for system-wide access from any directory:
 
-2. **Run the focused workflow**:
+```bash
+# Clone the repository
+git clone https://github.com/marcelsud/spec-driven-agentic-development
+cd spec-driven-agentic-development
+
+# Copy to global Claude directory
+cp -r .claude templates "$HOME/.claude/"
+```
+
+Now use from any project directory:
+```bash
+/spec-init user-authentication-system
+/spec-design
+/spec-tasks
+```
+
+### Local Installation (Project-Specific)
+
+Install in specific project only:
+
+```bash
+# Clone the repository
+git clone https://github.com/marcelsud/spec-driven-agentic-development
+cd spec-driven-agentic-development
+
+# Copy methodology and commands to your project
+cp -r .claude templates /path/to/your/project/
+```
+
+### Usage Workflow
+
+1. **Run the focused workflow**:
    ```bash
    # Phase 1: Create EARS requirements
    /spec-init user-authentication-system
@@ -31,7 +58,7 @@ This framework transforms complex feature development into manageable, iterative
    # (TDD, standard, collaborative, or self-implementation)
    ```
 
-3. **Follow approval gates**:
+2. **Follow approval gates**:
    - Review and approve requirements before design
    - Review and approve design before tasks
    - Review and approve tasks before implementation
