@@ -91,11 +91,11 @@ Ensure design:
 
 ## Approval Gate
 After creating design.md, ask:
-"Technical design complete. The design addresses all requirements using [tech stack] with [key architectural decisions]. Ready to proceed to task breakdown with `/spec-tasks`, or would you like to review and modify the design first?"
+"Technical design complete. The design addresses all requirements using [tech stack] with [key architectural decisions]. Ready to proceed to task breakdown with `/spec:tasks`, or would you like to review and modify the design first?"
 
 ## Next Steps
 - User reviews design and approves/requests changes
-- Once approved, user can run `/spec-tasks` to proceed to implementation planning
+- Once approved, user can run `/spec:tasks` to proceed to implementation planning
 - Design serves as blueprint for structured development
 
 Now generate the technical design based on existing requirements.

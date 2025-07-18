@@ -11,35 +11,42 @@ Quick reference for the spec-driven development methodology commands.
 
 ### Core Workflow Commands
 
-#### `/spec-init [feature-name]`
-**Purpose**: Initialize new feature with EARS-formatted requirements
-- **Input**: Feature name and description
-- **Output**: `features/[feature-name]/requirements.md`
-- **Usage**: Start of Phase 1 - Requirements gathering
-- **Example**: `/spec-init user-authentication-system`
+#### `/spec:plan [project-description]`
+**Purpose**: Interactively break down a project into a plan with multiple features.
+- **Input**: A high-level description of the project.
+- **Output**: Numbered directories for each feature, each with a basic `requirements.md`.
+- **Usage**: Start of Phase 1 - Planning.
+- **Example**: `/spec:plan "A task management app"`
 
-#### `/spec-design`
+#### `/spec:requirements [feature-name]`
+**Purpose**: Interactively detail the EARS requirements for a specific feature.
+- **Input**: A feature name (e.g., `01-project-setup`).
+- **Output**: A detailed `features/[feature-name]/requirements.md`.
+- **Usage**: Phase 2 - After planning is complete.
+- **Prerequisite**: Must have a feature directory created by `/spec:plan`.
+
+#### `/spec:design`
 **Purpose**: Generate technical design from existing requirements
 - **Input**: Existing `requirements.md` in current feature context
 - **Output**: `design.md` with architecture and implementation approach
 - **Usage**: Phase 2 - After requirements approval
 - **Prerequisite**: Must have approved requirements.md
 
-#### `/spec-tasks`
+#### `/spec:tasks`
 **Purpose**: Break down design into TDD implementation tasks
 - **Input**: Existing `design.md` in current feature context
 - **Output**: `tasks.md` with structured implementation plan
 - **Usage**: Phase 3 - After design approval
 - **Prerequisite**: Must have approved design.md
 
-#### `/spec-advanced`
+#### `/spec:advanced`
 **Purpose**: Apply enterprise-grade analysis with threat modeling and risk assessment
 - **Input**: Existing specifications in current feature context
 - **Output**: Enhanced specifications with security, scalability, and risk analysis
 - **Usage**: Can be used at any phase for comprehensive analysis
 - **Features**: STRIDE threat modeling, performance analysis, edge case identification
 
-#### `/spec-help`
+#### `/spec:help`
 **Purpose**: Display this help information
 - **Input**: None
 - **Output**: Command reference and usage guide
@@ -48,10 +55,11 @@ Quick reference for the spec-driven development methodology commands.
 ## Workflow Overview
 
 ```
-1. /spec-init [feature-name]  →  requirements.md  →  [Approval Gate]
-2. /spec-design               →  design.md        →  [Approval Gate]  
-3. /spec-tasks                →  tasks.md         →  [Approval Gate]
-4. Implementation             →  Working Code     →  [Testing & Deploy]
+1. /spec:plan [project]      →  Feature List     →  [Approval Gate]
+2. /spec:requirements [feature] →  requirements.md  →  [Approval Gate]
+3. /spec:design               →  design.md        →  [Approval Gate]  
+4. /spec:tasks                →  tasks.md         →  [Approval Gate]
+5. Implementation             →  Working Code     →  [Testing & Deploy]
 ```
 
 ## Key Principles
@@ -99,14 +107,14 @@ Choose your implementation strategy:
 
 ## Advanced Features
 
-### Tech Stack Options (in /spec-design)
+### Tech Stack Options (in /spec:design)
 1. Full-Stack JavaScript (Node.js + React/Vue)
 2. Python + Modern Frontend (FastAPI/Django + React/Vue)
 3. Cloud-Native Microservices (Kubernetes + API Gateway)
 4. Enterprise Java/C# (Spring Boot/.NET)
 5. Custom/Other (User-defined stack)
 
-### Advanced Analysis (in /spec-advanced)
+### Advanced Analysis (in /spec:advanced)
 - **STRIDE Threat Modeling**: Security vulnerability analysis
 - **Risk Assessment**: Probability, impact, and mitigation strategies
 - **Scalability Analysis**: Performance bottlenecks and scaling strategies
@@ -134,32 +142,36 @@ Choose your implementation strategy:
 
 ## Common Usage Patterns
 
-### New Feature Development
+### New Project Development
 ```bash
-/spec-init payment-processing-system
+/spec:plan my-new-project
+# [Review and approve project plan]
+/spec:requirements 01-first-feature
 # [Review and approve requirements.md]
-/spec-design
+/spec:design
 # [Review and approve design.md]
-/spec-tasks
+/spec:tasks
 # [Review and approve tasks.md]
 # Begin implementation following task breakdown
 ```
 
 ### Enhanced Security Analysis
 ```bash
-/spec-init secure-api-gateway
+/spec:plan secure-api-gateway-project
+# [Approve project plan]
+/spec:requirements 01-secure-api-gateway
 # [Approve requirements]
-/spec-design
+/spec:design
 # [Approve design]
-/spec-advanced  # Add threat modeling and security analysis
+/spec:advanced  # Add threat modeling and security analysis
 # [Review enhanced specifications]
-/spec-tasks
+/spec:tasks
 ```
 
 ### Existing Feature Enhancement
 ```bash
 # Navigate to existing feature directory
-/spec-advanced  # Analyze existing specifications
+/spec:advanced  # Analyze existing specifications
 # Review security, performance, and risk recommendations
 # Update specifications as needed
 ```

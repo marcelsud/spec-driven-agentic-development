@@ -48,6 +48,14 @@
 - [Authentication mechanism]
 - [Authorization levels]
 
+## Known Gotchas & Library Quirks
+
+```
+# CRITICAL: [Library/Framework name] requires [specific setup or configuration].
+# Example: The chosen web framework requires async handlers for all routes.
+# Example: The database driver has a batch limit of 1000 records per transaction.
+```
+
 ## Security Considerations
 - **Authentication**: [implementation approach]
 - **Authorization**: [access control strategy]
@@ -65,7 +73,24 @@
 - **Phase 2**: [feature enhancements]
 - **Phase 3**: [optimization and polish]
 
-## Testing Approach
-- **Unit Testing**: [component testing strategy]
-- **Integration Testing**: [system integration tests]
-- **End-to-End Testing**: [user workflow validation]
+## Validation Loop
+
+### Level 1: Syntax & Style
+```bash
+# Example: linter --fix && style-checker
+```
+
+### Level 2: Unit Tests
+```bash
+# Example: test-runner --unit
+```
+
+### Level 3: Integration Tests
+```bash
+# Example: test-runner --integration
+```
+
+### Level 4: End-to-End Tests
+```bash
+# Example: e2e-test-suite
+```

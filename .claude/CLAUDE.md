@@ -5,24 +5,28 @@ This methodology provides a structured, iterative approach to software developme
 ## Core Workflow
 
 ### Phase Structure
-1. **Requirements** - Define WHAT needs to be built using EARS format
-2. **Design** - Define HOW it will be built with technical specifications  
-3. **Tasks** - Break down into implementable steps with TDD methodology
-4. **Implementation** - Code development following structured tasks
+1. **Planning** - Break down a project goal into manageable features
+2. **Requirements** - Define WHAT needs to be built for a feature using EARS
+3. **Design** - Define HOW it will be built with technical specifications
+4. **Tasks** - Break down into implementable steps with TDD methodology
+5. **Implementation** - Code development following structured tasks
 
 ### Command-Driven Workflow
 Use focused slash commands for reliable, efficient development:
 
-1. **Requirements Phase**: 
-   - Run `/spec-init [feature-name]` to create EARS-formatted requirements
-   - This creates the feature directory and requirements.md
+1. **Planning Phase**:
+   - Run `/spec:plan [project-description]` to break down the project into features.
+   - This creates feature directories and basic `requirements.md` files.
 
-2. **Design Phase**:
-   - After requirements approval, run `/spec-design` to generate technical design
+2. **Requirements Phase**:
+   - Run `/spec:requirements [feature-name]` to detail the EARS-formatted requirements for a feature.
+
+3. **Design Phase**:
+   - After requirements approval, run `/spec:design` to generate technical design
    - This creates design.md with architecture and implementation approach
 
 3. **Tasks Phase**:
-   - After design approval, run `/spec-tasks` to break down into TDD tasks
+   - After design approval, run `/spec:tasks` to break down into TDD tasks
    - This creates tasks.md with structured implementation plan
 
 4. **Implementation Phase**:
@@ -135,9 +139,11 @@ project/
 ├── CLAUDE.md                 # This methodology (Claude Code will reference)
 ├── .claude/
 │   └── commands/
-│       ├── spec-init.md      # Initialize feature specs
-│       ├── spec-design.md    # Generate design from requirements  
-│       └── spec-tasks.md     # Break down design into tasks
+│       └── spec/
+│           ├── plan.md           # Plan project into features
+│           ├── requirements.md   # Detail feature requirements
+│           ├── design.md         # Generate design from requirements  
+│           └── tasks.md          # Break down design into tasks
 └── features/
     └── [feature-name]/
         ├── requirements.md   # EARS-formatted requirements
@@ -148,9 +154,10 @@ project/
 ## Usage with Claude Code
 
 ### Slash Commands
-- `/spec-init [feature-name]` - Initialize new feature specification
-- `/spec-design` - Generate design from existing requirements  
-- `/spec-tasks` - Create implementation tasks from design
+- `/spec:plan [project-description]` - Plan a new project and break it into features
+- `/spec:requirements [feature-name]` - Detail the requirements for a new feature
+- `/spec:design` - Generate design from existing requirements  
+- `/spec:tasks` - Create implementation tasks from design
 
 ### Best Practices
 - Always use explicit approval gates between phases
