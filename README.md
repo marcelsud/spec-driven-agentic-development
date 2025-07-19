@@ -141,6 +141,14 @@ your-project/
 - **Iterative**: Easy to refine individual phases
 - **Scalable**: Works for simple features to complex systems
 
+## 🤝 Contributing
+
+We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to make this project better.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ---
 
 Made with ❤️ by [Marcelo Santos](https://www.linkedin.com/in/marcelsud/)
