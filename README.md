@@ -18,13 +18,17 @@ A structured methodology for building software features through specifications, 
  ╚═╝  ╚═╝  ╚═════╝  ╚══════╝ ╚═╝  ╚═══╝    ╚═╝    ╚═╝  ╚═════╝     ╚═════╝  ╚══════╝   ╚═══╝
  by @marcelsud
 ``` 
-## 🚀 Quick Start
+## 🛠️ Installation
 
-1. **Copy to your project**: `cp -r /path/to/spec-driven-agentic-development/.claude /path/to/your/project/`
-2. **Start planning**: `/spec:plan "your project description"`
-3. **Follow the workflow**: Plan → Requirements → Design → Tasks → Execute
+```bash
+# Clone and copy to your project
+git clone https://github.com/marcelsud/spec-driven-agentic-development.git
+cp -r spec-driven-agentic-development/.claude /path/to/your/project/
+```
 
-See the working example in [`todo-app/`](todo-app/) built using this methodology.
+**Follow the workflow**: Plan → Requirements → Design → Tasks → Execute
+
+See the spec example in [`todo-app/`](todo-app/) built using this methodology.
 
 ## 🎯 The 5-Phase Workflow
 
@@ -139,35 +143,9 @@ your-project/
 - **Iterative**: Easy to refine individual phases
 - **Scalable**: Works for simple features to complex systems
 
-## 🛠️ Installation
-
-### Prerequisites
-- AI coding assistant (Claude Code, Cursor, etc.)
-- Basic understanding of software development
-
-### Setup
-```bash
-# Clone and copy to your project
-git clone https://github.com/your-repo/spec-driven-agentic-development
-cp -r spec-driven-agentic-development/.claude /path/to/your/project/
-```
-
-### Usage
-1. Load `.claude/CLAUDE.md` as context for your AI tool
-2. Start with `/spec:plan "your project description"`
-3. Follow the 5-phase workflow with approval gates
-4. Use `/spec:list` and `/spec:status` to track progress
-
-## 📚 Examples
-
-- **[Todo App](todo-app/)**: Complete example built using this methodology
-- **[Features](features/)**: Actual specifications used to build the todo app
-- **[Templates](.claude/templates/)**: Reference templates for each phase
-
-## 🤝 Contributing
-
-Improvements welcome via issues and pull requests. This methodology evolved from practical AI-assisted development experience.
-
 ---
 
-**Ready to build better software?** Start with: `/spec:plan your-awesome-project` 🚀
+Made with ❤️ by [Marcelo Santos](https://www.linkedin.com/in/marcelsud/)
+
+[Subscribe](https://buttondown.com/marcelsud) to receive links, insights and more. 
+
