@@ -1,11 +1,11 @@
 ---
-description: Display help information for spec-driven development commands
+description: Display help information for spec:driven development commands
 allowed-tools: Read(*), Write(*)
 ---
 
 # Spec-Driven Development Help
 
-Quick reference for the spec-driven development methodology commands.
+Quick reference for the spec:driven development methodology commands.
 
 ## Available Commands
 

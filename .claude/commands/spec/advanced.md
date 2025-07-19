@@ -5,7 +5,7 @@ allowed-tools: Read(*), Write(*), Edit(*), MultiEdit(*), TodoWrite
 
 # Advanced Mode: Comprehensive Analysis
 
-You are providing advanced, enterprise-grade analysis for spec-driven development, including threat modeling, risk assessment, and comprehensive edge case analysis.
+You are providing advanced, enterprise-grade analysis for spec:driven development, including threat modeling, risk assessment, and comprehensive edge case analysis.
 
 ## Your Task
 Enhance existing specification with advanced analysis for: **Current feature context**

@@ -43,6 +43,10 @@ Implement the feature by executing the plan in `tasks.md`.
     *   Think hard before you execute. Create a comprehensive plan to tackle the tasks.
     *   Use your `TodoWrite` tool to break down the implementation of each task from `tasks.md` into smaller, manageable steps.
     *   Identify implementation patterns from the existing codebase as guided by `design.md`.
+    *   Use your `TodoWrite` tool to create a task to run the complete test suite. All tests must pass otherwise you MUST fix them as we can only proceed to IMPLEMENTED after the whole test suite is 100% passing.
+    *   Use your `TodoWrite` tool to create a task for the Approval Gate
+    *   Use your `TodoWrite` tool to create a task to create the `task_{nr}_completed.md` with the completion summary after the Approval Gate
+    *   Use your `TodoWrite` tool to create a task to mark the task with `[IMPLEMENTED]` inside tasks.md file after the Approval Gate
 
 3.  **Execute Tasks (TDD Cycle)**:
     *   Follow the task order from `tasks.md`.
