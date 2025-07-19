@@ -28,8 +28,6 @@ cp -r spec-driven-agentic-development/.claude /path/to/your/project/
 
 **Follow the workflow**: Plan → Requirements → Design → Tasks → Execute
 
-See the spec example in [`todo-app/`](todo-app/) built using this methodology.
-
 ## 🎯 The 5-Phase Workflow
 
 ```
