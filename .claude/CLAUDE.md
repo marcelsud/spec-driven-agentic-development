@@ -1,51 +1,24 @@
 # Spec-Driven Agentic Development Methodology
 
-This methodology provides a structured, iterative approach to software development with explicit approval gates and quality controls. It transforms complex feature development into a series of manageable, well-defined phases.
+A streamlined approach to software development that generates complete feature specifications efficiently.
 
 ## Core Workflow
 
-### Phase Structure
-1. **Planning** - Break down a project goal into manageable features
-2. **Requirements** - Define WHAT needs to be built for a feature using EARS
-3. **Design** - Define HOW it will be built with technical specifications
-4. **Tasks** - Break down into implementable steps with TDD methodology
-5. **Implementation** - Code development following structured tasks
+### Single Command Flow
+Run `/spec:create [feature-description]` to generate a complete specification:
 
-### Command-Driven Workflow
-Use focused slash commands for reliable, efficient development:
-
-1. **Planning Phase**:
-   - Run `/spec:plan [project-description]` to break down the project into features.
-   - This creates feature directories and basic `requirements.md` files.
-
-2. **Requirements Phase**:
-   - Run `/spec:requirements [feature-name]` to detail the EARS-formatted requirements for a feature.
-
-3. **Design Phase**:
-   - After requirements approval, run `/spec:design` to generate technical design
-   - This creates design.md with architecture and implementation approach
-
-3. **Tasks Phase**:
-   - After design approval, run `/spec:tasks` to break down into TDD tasks
-   - This creates tasks.md with structured implementation plan
-
-4. **Implementation Phase**:
-   - Choose implementation approach (TDD, standard, collaborative, or self-implementation)
-   - Follow the structured task breakdown
-
-### Key Benefits of Command Approach
-- **Focused Commands**: Each command has a specific, well-defined purpose
-- **Better Context Management**: Smaller, targeted operations reduce complexity
-- **Iterative Refinement**: Easy to modify individual phases
-- **User Control**: Clear approval gates between each phase
-- **Tool Integration**: Leverages Claude Code's native slash command features
+1. **Initial Questions** - Gather context via AskUserQuestion tool
+2. **context.md** - Project context + technical decisions
+3. **requirements.md** - EARS-formatted requirements
+4. **Pre-planning Questions** - Clarify implementation approach
+5. **tasks.md** - TDD task breakdown
+6. **Implementation** - Run `/spec:execute [feature-name]` to implement
 
 ### Key Principles
-- **Explicit Approval Gates**: Always request approval before proceeding to next phase
-- **EARS Requirements**: Use structured requirement syntax for clarity and testability
-- **Test-Driven Development**: Implement using Red-Green-Refactor cycle
-- **Iterative Refinement**: Allow multiple iterations within each phase
-- **User Control**: Maintain user oversight throughout the process
+- **Efficient**: Single command generates all spec files
+- **Interactive**: Uses AskUserQuestion for clarification (not approval gates)
+- **EARS Requirements**: Structured requirement syntax for clarity
+- **TDD Ready**: Tasks include test scenarios
 
 ## EARS Format (Easy Approach to Requirements Syntax)
 
@@ -87,100 +60,20 @@ Use focused slash commands for reliable, efficient development:
 4. Implement code incrementally to satisfy tests
 5. Refactor continuously while maintaining green tests
 
-## Interactive Workflow Patterns
-
-### Requirements Phase
-- Agent creates requirements.md using EARS format
-- Agent asks: "Do the requirements look good? Ready for design phase?"
-- User reviews, approves, or requests changes
-
-### Design Phase  
-- Agent creates design.md addressing all requirements
-- Agent asks: "Does this technical approach work? Ready for task breakdown?"
-- User reviews technical decisions and approves/modifies
-
-### Tasks Phase
-- Agent creates tasks.md with TDD methodology
-- Agent asks: "Do these implementation tasks look comprehensive? Ready to begin development?"
-- User validates task breakdown and sequencing
-
-### Implementation Phase
-- Agent proposes TDD approach for implementation
-- User chooses: TDD, standard implementation, self-implementation, or collaborative
-- Agent follows chosen approach with regular check-ins
-
-## Quality Gates
-
-### Requirement Validation
-- [ ] Uses proper EARS syntax
-- [ ] Requirements are testable and specific
-- [ ] All conditions clearly defined
-- [ ] No ambiguous terms used
-- [ ] Covers all user scenarios
-
-### Design Validation  
-- [ ] Addresses all requirements
-- [ ] Technical approach is sound
-- [ ] Scalability considerations included
-- [ ] Security aspects addressed
-- [ ] Integration points defined
-
-### Task Validation
-- [ ] Tasks are granular and actionable
-- [ ] Proper sequencing and dependencies
-- [ ] Test scenarios included
-- [ ] Acceptance criteria defined
-- [ ] Implementation approach clear
-
 ## File Structure
 
 ```
-project/
-├── CLAUDE.md                 # This methodology (Claude Code will reference)
-├── .claude/
-│   └── commands/
-│       └── spec/
-│           ├── plan.md           # Plan project into features
-│           ├── requirements.md   # Detail feature requirements
-│           ├── design.md         # Generate design from requirements  
-│           └── tasks.md          # Break down design into tasks
-└── features/
-    └── [feature-name]/
-        ├── requirements.md   # EARS-formatted requirements
-        ├── design.md        # Technical design document
-        └── tasks.md         # Implementation breakdown
+features/
+└── [feature-name]/
+    ├── context.md      # Context + technical decisions
+    ├── requirements.md # EARS-formatted requirements
+    └── tasks.md        # Implementation tasks
 ```
 
-## Usage with Claude Code
+## Slash Commands
 
-### Slash Commands
-- `/spec:plan [project-description]` - Plan a new project and break it into features
-- `/spec:requirements [feature-name]` - Detail the requirements for a new feature
-- `/spec:design` - Generate design from existing requirements  
-- `/spec:tasks` - Create implementation tasks from design
+- `/spec:create [feature]` - Generate complete specification (context + requirements + tasks)
+- `/spec:execute [feature]` - Execute implementation from tasks.md
+- `/spec:status` - Show implementation status
+- `/spec:list` - List all features
 
-### Best Practices
-- Always use explicit approval gates between phases
-- Reference this methodology when guidance is needed
-- Maintain user control over technical decisions
-- Follow TDD implementation when possible
-- Iterate within phases based on feedback
-
-## Advanced Features
-
-### Enhanced Analysis (Optional)
-When requested, provide deeper analysis including:
-- Security threat modeling and mitigation strategies
-- Performance optimization and scalability planning  
-- Risk assessment and contingency planning
-- Architecture decision records (ADRs)
-
-### Integration Support
-- Reference external specs via `#[[file:relative_path]]` syntax
-- Support for OpenAPI, GraphQL, and other specification formats
-- Version control integration for spec evolution
-- Cross-feature dependency tracking
-
----
-
-This methodology ensures high-quality, well-tested software development through structured phases, clear requirements, and iterative feedback loops. It provides the framework for reliable agentic development while maintaining human oversight and control.

@@ -25,8 +25,8 @@ You are executing a feature implementation based on the structured specification
 **Context Loading:**
 
 *   Once a feature is selected, READ these files into your context:
+    *   `features/[selected_feature_name]/context.md`
     *   `features/[selected_feature_name]/requirements.md`
-    *   `features/[selected_feature_name]/design.md`
     *   `features/[selected_feature_name]/tasks.md`
 
 ## Your Task
@@ -35,14 +35,14 @@ Implement the feature by executing the plan in `tasks.md`.
 ## Execution Process
 
 1.  **Understand the Full Specification**:
-    *   Read `requirements.md` to understand the "what" and "why".
-    *   Read `design.md` to understand the "how" and the architecture.
+    *   Read `context.md` to understand the context and technical decisions.
+    *   Read `requirements.md` to understand the "what" (EARS requirements).
     *   Thoroughly review `tasks.md` for the detailed implementation plan and TDD steps.
 
 2.  **ULTRATHINK & Plan Execution**:
     *   Think hard before you execute. Create a comprehensive plan to tackle the tasks.
     *   Use your `TodoWrite` tool to break down the implementation of each task from `tasks.md` into smaller, manageable steps.
-    *   Identify implementation patterns from the existing codebase as guided by `design.md`.
+    *   Identify implementation patterns from the existing codebase as guided by `context.md`.
     *   Use your `TodoWrite` tool to create a task to run the complete test suite. All tests must pass otherwise you MUST fix them as we can only proceed to IMPLEMENTED after the whole test suite is 100% passing.
     *   Use your `TodoWrite` tool to create a task for the Approval Gate
     *   Use your `TodoWrite` tool to create a task to create the `task_{nr}_completed.md` with the completion summary after the Approval Gate
