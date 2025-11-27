@@ -22,8 +22,8 @@ A structured methodology for building software features through specifications, 
 ## Installation
 
 ```bash
-git clone https://github.com/marcelsud/spec-driven-agentic-development.git
-cp -r spec-driven-agentic-development/.claude /path/to/your/project/
+cd /path/to/your/project
+npx degit marcelsud/spec-driven-agentic-development/.claude .claude
 ```
 
 ## Workflow

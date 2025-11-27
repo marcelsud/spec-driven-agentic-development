@@ -11,26 +11,33 @@ Quick reference for the spec:driven development methodology.
 
 | Command | Description |
 |---------|-------------|
-| `/spec:create [feature]` | Generate complete specification (context + requirements + tasks) |
+| `/spec:create [feature]` | Generate complete specification with codebase exploration |
 | `/spec:execute [feature]` | Execute implementation from tasks.md |
 | `/spec:status` | Show implementation status of all features |
 | `/spec:list` | List all available features |
+| `/spec:review [feature]` | Review spec for EARS compliance and quality |
+| `/spec:diagram [feature]` | Generate Mermaid diagrams from spec |
+| `/spec:next` | Suggest next feature to work on |
 | `/spec:help` | Display this help |
 
 ## Workflow
 
 ```
-/spec:create [feature]  →  context.md + requirements.md + tasks.md
+/spec:create [feature]  →  exploration.md + context.md + requirements.md + tasks.md
+/spec:review [feature]  →  Quality review + optional fixes
+/spec:diagram [feature] →  Mermaid diagrams in diagrams.md
+/spec:next              →  Recommendation for next feature
 /spec:execute [feature] →  Implementation following TDD
 ```
 
-## `/spec:create` Flow
+## `/spec:create` Flow (Enhanced)
 
-1. **Initial Questions** - Gather context (goal, scope, tech stack, constraints)
-2. **context.md** - Project context + technical decisions
-3. **requirements.md** - EARS-formatted requirements
-4. **Pre-planning Questions** - Clarify implementation approach
-5. **tasks.md** - TDD task breakdown
+1. **Triage** - Assess complexity, determine exploration depth
+2. **Explore** - Spawn agents to analyze codebase patterns (parallel)
+3. **Questions** - Context-aware questions informed by exploration
+4. **Plan** - Spawn agents for approaches and strategies (parallel)
+5. **Synthesize** - Create exploration.md with findings
+6. **Generate** - Create context.md, requirements.md, tasks.md
 
 ## EARS Requirements Format
 
@@ -52,21 +59,33 @@ Quick reference for the spec:driven development methodology.
 
 ```
 features/[feature-name]/
+├── exploration.md  # Codebase analysis + approach evaluation
 ├── context.md      # Context + technical decisions
 ├── requirements.md # EARS requirements
-└── tasks.md        # TDD implementation tasks
+├── tasks.md        # TDD implementation tasks
+├── diagrams.md     # Generated Mermaid diagrams (optional)
+└── review.md       # Spec quality review (optional)
 ```
 
 ## Example Usage
 
 ```bash
-# Create new feature specification
+# Create new feature specification (with codebase exploration)
 /spec:create user-authentication
+
+# Review spec quality and EARS compliance
+/spec:review user-authentication
+
+# Generate architecture diagrams
+/spec:diagram user-authentication
+
+# Get recommendation for next feature
+/spec:next
 
 # View all features
 /spec:list
 
-# Check status
+# Check implementation status
 /spec:status
 
 # Implement feature
