@@ -17,7 +17,8 @@ Create a complete specification for: **$ARGUMENTS**
 4. **Plan** - Spawn Plan agents for approaches and strategies (parallel)
 5. **Synthesize** - Create exploration.md with all findings
 6. **Generate** - Create context.md, requirements.md, tasks.md
-7. **Summary** - Present all generated files
+7. **Review** - Run /spec:review to validate spec before finalizing
+8. **Summary** - Present all generated files
 
 ---
 
@@ -441,7 +442,21 @@ Based on exploration, use these as implementation references:
 
 ---
 
-## Phase 6: Summary
+## Phase 6: Review
+
+Run `/spec:review` to validate the generated specification before finalizing.
+
+This phase:
+1. Checks EARS compliance for all requirements
+2. Validates completeness of context.md, requirements.md, and tasks.md
+3. Identifies gaps or inconsistencies
+4. Fixes any issues found on the spot
+
+Address all identified issues before proceeding to the summary.
+
+---
+
+## Phase 7: Summary
 
 Present enhanced summary:
 
