@@ -154,25 +154,27 @@ Options (multiSelect: true):
 - **Fix EARS formatting** - Add missing SHALL keywords, correct patterns
 - **Remove ambiguous terms** - Replace vague terms with placeholders for you to fill
 - **Add missing sections** - Create skeleton sections in context.md
-- **Skip fixes** - Just save the review report
+- **Skip fixes** - Just show the review report without making changes
 
 ### Step 8: Apply Fixes (if requested)
 
 For each selected fix category:
 1. Make the edits using the `Edit` tool
-2. Note what was changed
+2. Track what was changed
 
-### Step 9: Save Review
+### Step 9: Present Final Results
 
-Save the review report to `features/[feature-name]/review.md`
+**DO NOT create a review.md file.** Instead, present the results directly to the user:
 
-Include at the end:
-```markdown
----
-Review generated: [timestamp]
-Issues found: [total count]
-Fixes applied: [Yes/No - list if yes]
-```
+1. Show the complete review report in the output
+2. If fixes were applied, include a "Corrections Applied" section listing:
+   - File and line number
+   - Original content
+   - New content
+3. End with a summary:
+   - Total issues found
+   - Issues fixed
+   - Remaining issues (if any)
 
 ## Example Output
 
@@ -215,8 +217,15 @@ Fixes applied: [Yes/No - list if yes]
 - Requirements without tasks: REQ-011, REQ-012
 - Tasks without requirement reference: Task 6
 
+### Corrections Applied ✓
+| File | Line | Original | Corrected |
+|------|------|----------|-----------|
+| requirements.md | 23 | "The system will validate tokens" | "The system SHALL validate tokens" |
+| requirements.md | 15 | "respond quickly" | "respond within 2 seconds" |
+
 ---
-Review generated: 2024-01-15
-Issues found: 7
-Fixes applied: No
+**Review Summary**
+- Issues found: 7
+- Issues fixed: 2
+- Remaining issues: 5
 ```
